@@ -1,0 +1,11 @@
+
+What is the papers all about ??
+
+Reliance on CNN's is not neccessary anymore, transformers can be applied to computer vision tasks.
+Pure Transformers important!!!! classical transformers
+not the first paper that introduces transformers for computer vision tasks, 
+Structure of Transformers
+sequence data
+positional embeddings, patching
+
+CHECK WHAT IS INDUCTIVE BIAS
