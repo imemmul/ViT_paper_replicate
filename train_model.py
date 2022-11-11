@@ -112,7 +112,7 @@ def train(model: torch.nn.Module,
           dataloader=test_dataloader,
           loss_fn=loss_fn,
           device=device)
-        print(optimizer.state_dict()['param_groups'][0]['lr'])
+        print(f"Learning Rate: {optimizer.state_dict()['param_groups'][0]['lr']}")
 
         # Print out what's happening
         print(
