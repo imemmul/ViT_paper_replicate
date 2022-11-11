@@ -7,7 +7,8 @@ def train_step(model: torch.nn.Module,
                dataloader: torch.utils.data.DataLoader, 
                loss_fn: torch.nn.Module, 
                optimizer: torch.optim.Optimizer,
-               device: torch.device) -> Tuple[float, float]:
+               device: torch.device,
+               lr_scheduler: torch.optim.lr_scheduler) -> Tuple[float, float]:
     # Put model in train mode
     model.train()
 
@@ -29,11 +30,15 @@ def train_step(model: torch.nn.Module,
         # 3. Optimizer zero grad
         optimizer.zero_grad()
 
+        #to use lr scheduler
+
         # 4. Loss backward
         loss.backward()
 
         # 5. Optimizer step
         optimizer.step()
+
+        lr_scheduler.step()
 
         # Calculate and accumulate accuracy metric across all batches
         y_pred_class = torch.argmax(torch.softmax(y_pred, dim=1), dim=1)
@@ -83,7 +88,8 @@ def train(model: torch.nn.Module,
           optimizer: torch.optim.Optimizer,
           loss_fn: torch.nn.Module,
           epochs: int,
-          device: torch.device) -> Dict[str, List]:
+          device: torch.device,
+          lr_scheduler: torch.optim.lr_scheduler) -> Dict[str, List]:
     # Create empty results dictionary
     results = {"train_loss": [],
                "train_acc": [],
@@ -100,11 +106,13 @@ def train(model: torch.nn.Module,
                                           dataloader=train_dataloader,
                                           loss_fn=loss_fn,
                                           optimizer=optimizer,
-                                          device=device)
+                                          device=device,
+                                          lr_scheduler=lr_scheduler)
         test_loss, test_acc = test_step(model=model,
           dataloader=test_dataloader,
           loss_fn=loss_fn,
           device=device)
+        print(optimizer.state_dict()['param_groups'][0]['lr'])
 
         # Print out what's happening
         print(
