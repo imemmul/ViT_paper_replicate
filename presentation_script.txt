@@ -1,11 +1,17 @@
 
 What is the papers all about ??
 
-Reliance on CNN's is not neccessary anymore, transformers can be applied to computer vision tasks.
-Pure Transformers important!!!! classical transformers
-not the first paper that introduces transformers for computer vision tasks, 
-Structure of Transformers
-sequence data
-positional embeddings, patching
 
-CHECK WHAT IS INDUCTIVE BIAS
+What did transformers do that very important ?
+    Attention is already invented before Attention is all you need paper.
+    what attention is all you need does is inventing self-attention.
+    Revolution in NLP, beaten lstm and gru
+
+    Reliance on CNN's is not neccessary anymore, transformers can be applied to computer vision tasks.
+    Pure Transformers important!!!! classical transformers
+    not the first paper that introduces transformers for computer vision tasks, 
+    Structure of Transformers
+    sequence data
+    positional embeddings, patching
+
+    CHECK WHAT IS INDUCTIVE BIAS

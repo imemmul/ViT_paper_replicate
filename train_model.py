@@ -123,3 +123,14 @@ def train(model: torch.nn.Module,
 
     # Return the filled results at the end of the epochs
     return results
+## summary function
+import torch.nn as nn
+from torchinfo import summary
+def print_summary(model:nn.Module, input_size,):
+
+  print(summary(model=model, 
+          input_size=input_size, # (batch_size, color_channels, height, width)
+          # col_names=["input_size"], # uncomment for smaller output
+          col_names=["input_size", "output_size", "num_params", "trainable"],
+          col_width=20,
+          row_settings=["var_names"]))
