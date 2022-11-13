@@ -8,7 +8,7 @@ def train_step(model: torch.nn.Module,
                loss_fn: torch.nn.Module, 
                optimizer: torch.optim.Optimizer,
                device: torch.device,
-               lr_scheduler: torch.optim.lr_scheduler) -> Tuple[float, float]:
+               lr_scheduler: torch.optim.lr_scheduler=None) -> Tuple[float, float]:
     # Put model in train mode
     model.train()
 
@@ -37,8 +37,8 @@ def train_step(model: torch.nn.Module,
 
         # 5. Optimizer step
         optimizer.step()
-
-        lr_scheduler.step()
+        if lr_scheduler != None:
+          lr_scheduler.step()
 
         # Calculate and accumulate accuracy metric across all batches
         y_pred_class = torch.argmax(torch.softmax(y_pred, dim=1), dim=1)
@@ -89,7 +89,7 @@ def train(model: torch.nn.Module,
           loss_fn: torch.nn.Module,
           epochs: int,
           device: torch.device,
-          lr_scheduler: torch.optim.lr_scheduler) -> Dict[str, List]:
+          lr_scheduler: torch.optim.lr_scheduler=None) -> Dict[str, List]:
     # Create empty results dictionary
     results = {"train_loss": [],
                "train_acc": [],

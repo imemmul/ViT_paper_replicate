@@ -1,20 +1,6 @@
+Introduction : talk about paper when its released and who are the authors ?
+2nd slide : talk about CNNS and papers motivation behind it they showed that reliance on cnns is not necesseary
+and in order to understand vision transformer first we should take care of transformers and attention mechanism
+3nd slide talk about transformers when they introduced NLP tasks
+Transformers explain them how they work how multi-head attention module works, positional embedding, input embedding 
 
-What is the papers all about ??
-
-
-What did transformers do that very important ?
-    Attention is already invented before Attention is all you need paper.
-    what attention is all you need does is inventing self-attention.
-    Revolution in NLP, beaten lstm and gru
-
-    Reliance on CNN's is not neccessary anymore, transformers can be applied to computer vision tasks.
-    Pure Transformers important!!!! classical transformers
-    not the first paper that introduces transformers for computer vision tasks, 
-    Structure of Transformers
-    sequence data
-    positional embeddings, patching
-    Each attention head can be implemented in parallel
-    CHECK WHAT IS INDUCTIVE BIAS
-
-
-Attention is quadratic operation.
