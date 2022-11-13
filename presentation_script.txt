@@ -13,5 +13,8 @@ What did transformers do that very important ?
     Structure of Transformers
     sequence data
     positional embeddings, patching
-
+    Each attention head can be implemented in parallel
     CHECK WHAT IS INDUCTIVE BIAS
+
+
+Attention is quadratic operation.

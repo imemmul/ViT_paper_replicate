@@ -134,7 +134,7 @@ def train(model: torch.nn.Module,
 ## summary function
 import torch.nn as nn
 from torchinfo import summary
-def print_summary(model:nn.Module, input_size,):
+def print_summary(model:nn.Module, input_size):
 
   print(summary(model=model, 
           input_size=input_size, # (batch_size, color_channels, height, width)
