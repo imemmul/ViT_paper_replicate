@@ -53,8 +53,10 @@ def create_dataloaders(
     )
 
   # Get class names
-  class_names = train_data.classes
-  # Turn images into data loaders
-
+  class_names = None
+  try:
+    class_names = train_data.classes
+  except:
+    pass
 
   return train_dataloader, test_dataloader, class_names
