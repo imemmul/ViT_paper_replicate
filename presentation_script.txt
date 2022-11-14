@@ -1,6 +1,0 @@
-Introduction : talk about paper when its released and who are the authors ?
-2nd slide : talk about CNNS and papers motivation behind it they showed that reliance on cnns is not necesseary
-and in order to understand vision transformer first we should take care of transformers and attention mechanism
-3nd slide talk about transformers when they introduced NLP tasks
-Transformers explain them how they work how multi-head attention module works, positional embedding, input embedding 
-
